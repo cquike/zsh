@@ -102,14 +102,13 @@ _sar() {
     '*-I[report statistics for interrupts]: : _values -s "," interrupt 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 SUM ALL XALL' \
     '-i[select records as close as possible to interval]:interval' \
     '--iface=-[specify network interfaces for which statistics are to be displayed]:network interface:_sequence _net_interfaces' \
-    '-j[display persistent device names]:type:(ID LABEL PATH UUID)' \
+    '-j[display persistent device names]:type:(SID ID LABEL PATH UUID)' \
     '-m[report power management statistics]:keyword:_sequence compadd - CPU FAN FREQ IN TEMP USB ALL' \
     '-n[report network statistics]:keyword:_sequence compadd - DEV EDEV NFS NFSD SOCK IP EIP ICMP EICMP TCP ETCP UDP SOCK6 IP6 EIP6 ICMP6 EICMP6 UDP6 FC SOFT ALL' \
     '-o[save readings to file in binary form]:file:_files' \
     '-P[report per-processor statistics]:processor: _values -s "," processors ALL' \
     '-p[pretty-print device names]' \
-    '-q[report queue length and load averages]::keyword:(CPU IO LOAD MEM PSI ALL)' \
-    '-R[report memory statistics]' \
+    '-q[report system load and pressure-stall statistics]::keyword:(CPU IO LOAD MEM PSI ALL)' \
     '-r[report memory utilization statistics]:: :(ALL)' \
     '-S[report swap space utilization]' \
     '-s[set starting time of report]:start time (HH\:MM\:SS)' \
@@ -117,7 +116,7 @@ _sar() {
     '-t[display timestamps in original local time of file creator]' \
     '-u[report CPU utilization]:: :(ALL)' \
     '(- 1 2)-V[display version information]' \
-    '-v[report status of kernel tables]' \
+    '-v[report status of inode, file and other kernel tables]' \
     '-W[report swapping statistics]' \
     '-w[report task creation and system switching activity]' \
     '-y[report TTY device activity]' \
